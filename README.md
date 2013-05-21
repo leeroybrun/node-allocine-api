@@ -34,15 +34,15 @@ Here are the available methods for accessing the Allocine API :
 #### allocine.search
 
 Here are the arguments combinaison you can pass to the function
-    - (query, callback)
-    - (query, filter, callback)
-    - (query, options, callback)
+* (query, callback)
+* (query, filter, callback)
+* (query, options, callback)
 
 Arguments :
-    - query    -> text to search
-    - filter   -> string, comma separated, defining the type of content to search for : movie,tvseries,theater,news,video
-    - options  -> object containing the query options
-    - callback -> callback to call when the results are retrieved
+* query    -> text to search
+* filter   -> string, comma separated, defining the type of content to search for : movie,tvseries,theater,news,video
+* options  -> object containing the query options
+* callback -> callback to call when the results are retrieved
 
 Examples :
 ```javascript
