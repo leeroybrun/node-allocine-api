@@ -11,7 +11,7 @@
     "allocine",
     "movies",
     "tv shows"
-  ],  
+  ], 
   "license": "MIT",
   "engines": [
     "node"
