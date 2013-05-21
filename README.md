@@ -31,7 +31,7 @@ var allocine = require('allocine-api');
 
 Here are the available methods for accessing the Allocine API :
 
-#### allocine.search(query)
+#### allocine.search
 
 Here are the arguments combinaison you can pass to the function
     - (query, callback)
