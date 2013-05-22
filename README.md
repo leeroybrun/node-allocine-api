@@ -8,16 +8,18 @@ Il s'agit de l'un de mes premiers modules Node.js, donc soyez indulgents et n'h�
 
 ## Installation
 
-Pour l'installer, ajoutez simplement ce dépôt aux dépendances de votre fichier package.json :
+Pour l'installer, ajoutez-le aux dépendances de votre fichier package.json :
 
 ```json
 "dependencies" : {
 	...
-    "allocine-api": "https://github.com/leeroybrun/node-allocine-api/tarball/master"
+    "allocine-api": "*"
 }
 ```
 
 Appelez ensuite simplement `npm install`, et npm installera le module pour vous.
+
+Vous pouvez aussi simplement appeler `npm install allocine-api`.
 
 ## Utilisation
 
