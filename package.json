@@ -1,6 +1,6 @@
 {
   "name": "allocine-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Leeroy Brun <leeroy.brun@gmail.com>",
   "description": "Simple module used to access the Allocine API of movies and TV shows",
   "repository": {

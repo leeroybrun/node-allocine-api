@@ -1,14 +1,14 @@
 # node-allocine-api
 
-Node.js module used to access the Allocine API.
+Module Node.js permettant d'accéder à l'API d'Allociné.
 
-No dependencies needed ! Only core modules.
+Aucune dépendance nécessaire ! Il utilise uniquement des modules du core.
 
-This is one of my first Node.js modules, so please be kind and don't hesitate to suggest me improvements !
+Il s'agit de l'un de mes premiers modules Node.js, donc soyez indulgents et n'hésitez pas à me suggerer des améliorations !
 
-## Install it
+## Installation
 
-To install it, simply add this repository tarball to your package.json dependencies :
+Pour l'installer, ajoutez simplement ce dépôt aux dépendances de votre fichier package.json :
 
 ```json
 "dependencies" : {
@@ -17,43 +17,33 @@ To install it, simply add this repository tarball to your package.json dependenc
 }
 ```
 
-Then make a simple `npm install`, and npm will install the module for you.
+Appelez ensuite simplement `npm install`, et npm installera le module pour vous.
 
-## Use it
+## Utilisation
 
-Then you can simple require it like any other module inside your project files :
+Pour l'utiliser, incluez-le simplement dans les fichiers de votre application :
 
 ```javascript
 var allocine = require('allocine-api');
 ```
 
-### Methods
+### API
 
-Here are the available methods for accessing the Allocine API :
+Pour l'instant ce module ne comprend qu'une seule méthode pour accéder à l'API. Celle-ci est plus que suffisante puisqu'elle vous permet d'appeler l'API comme bon vous semble. D'autres méthodes feront peut-être leur apparition plus tard afin de faciliter l'accès à l'API.
 
-#### allocine.search
+Pour plus d'informations sur l'API Allociné, je vous invite à vous rendre sur le wiki de Gromez : http://wiki.gromez.fr/dev/api/allocine_v3
 
-Here are the arguments combinaison you can pass to the function
-* (query, callback)
-* (query, filter, callback)
-* (query, options, callback)
+#### allocine.api(method, options, callback)
 
-Arguments :
-* query    -> text to search
-* filter   -> string, comma separated, defining the type of content to search for : movie,tvseries,theater,news,video
-* options  -> object containing the query options
-* callback -> callback to call when the results are retrieved
+Cette fonction va appelé l'API définie (`method`) en lui fournissant les `options` (objet) passées en paramètre, puis appelera la fonction de `callback` en lui fournissant le résultat sous forme d'objet.
 
-Examples :
+Exemples :
 ```javascript
-// Only query and callback
-allocine.search('spiderman', function(results) { console.log(results.totalResults); });
+// Recherche de tous les films spiderman
+allocine.api('search', {q: 'spiderman', count: 20, filter: 'movie'}, function(results) { console.log(results.feed.totalResults); });
 
-// Query, filter and callback
-allocine.search('spiderman', 'movie', function(results) { console.log(results.totalResults); });
-
-// Query, options and callback
-allocine.search('spiderman', {count: 10, filter: 'movie'}, function(results) { console.log(results.totalResults); });
+// Informations sur un film particulier
+allocine.api('movie', {code: 128188}, function(result) { console.log(result.movie.title); });
 ```
 
-#### 
+**Attention !** Il semble que si vous essayiez de modifier l'option `filter`, par exemple pour ne récupérer que les films, vous devez alors définir l'option `count`. Sinon, l'API refusera votre appel et retournera une erreur 403. C'est très bizarre, mais il s'agit peut-être là d'une limitation ou d'une mesure de sécurité mise en place par Allociné.
