@@ -35,7 +35,7 @@ Pour plus d'informations sur l'API Allociné, je vous invite à vous rendre sur 
 
 #### allocine.api(method, options, callback)
 
-Cette fonction va appelé l'API définie (`method`) en lui fournissant les `options` (objet) passées en paramètre, puis appelera la fonction de `callback` en lui fournissant le résultat sous forme d'objet.
+Cette fonction va appeler l'API définie (`method`) en lui fournissant les `options` (objet) passées en paramètre, puis appelera la fonction de `callback` en lui fournissant le résultat sous forme d'objet.
 
 Exemples :
 ```javascript
