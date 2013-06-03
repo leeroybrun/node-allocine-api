@@ -1,6 +1,6 @@
 {
   "name": "allocine-api",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Leeroy Brun <leeroy.brun@gmail.com>",
   "description": "Simple module used to access the Allocine API",
   "repository": {
