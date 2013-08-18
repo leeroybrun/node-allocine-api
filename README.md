@@ -1,5 +1,7 @@
 # node-allocine-api
 
+[![NPM](https://nodei.co/npm/allocine-api.png)](https://nodei.co/npm/allocine-api/)
+
 Module Node.js permettant d'accéder à l'API d'Allociné.
 
 Aucune dépendance nécessaire ! Il utilise uniquement des modules du core.
