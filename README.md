@@ -49,3 +49,5 @@ allocine.api('search', {q: 'spiderman', count: 20, filter: 'movie'}, function(re
 // Informations sur un film particulier
 allocine.api('movie', {code: 128188}, function(result) { console.log(result.movie.title); });
 ```
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/leeroybrun/node-allocine-api/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
