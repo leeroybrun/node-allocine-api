@@ -39,15 +39,25 @@ Pour plus d'informations sur l'API Allociné, je vous invite à vous rendre sur 
 
 #### allocine.api(method, options, callback)
 
-Cette fonction va appeler l'API définie (`method`) en lui fournissant les `options` (objet) passées en paramètre, puis appelera la fonction de `callback` en lui fournissant le résultat sous forme d'objet.
+Cette fonction va appeler l'API définie (`method`) en lui fournissant les `options` (objet) passées en paramètre, puis appelera la fonction de `callback`. Le callback reçoit deux paramètres, le premier est un objet d'erreur (null si aucune erreur), et le deuxième est le résultat retourné par l'API sous forme d'objet.
 
 Exemples :
 ```javascript
-// Recherche de tous les films spiderman
-allocine.api('search', {q: 'spiderman', count: 20, filter: 'movie'}, function(results) { console.log(results.feed.totalResults); });
+// Recherche de tous les films "spiderman"
+allocine.api('search', {q: 'spiderman', filter: 'movie'}, function(error, results) {
+	if(error) { console.log('Error : '+ error); return; }
+	
+	console.log('Voici les données retournées par l\'API Allociné:');
+	console.log(results);
+});
 
 // Informations sur un film particulier
-allocine.api('movie', {code: 128188}, function(result) { console.log(result.movie.title); });
+allocine.api('movie', {code: '143067'}, function(error, result) {
+	if(error) { console.log('Error : '+ error); return; }
+
+	console.log('Voici les données retournées par l\'API Allociné:');
+	console.log(result);
+});
 ```
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/leeroybrun/node-allocine-api/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
